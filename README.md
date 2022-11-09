@@ -1,0 +1,3 @@
+# CW PART I - Shape Detection
+
+Introduction. Detecting (locating & classifying) instances of an object class in images is an important application in computer vision as well as an ongoing area of research. This assignment requires you 1) to experiment with the classical Viola-Jones object detection framework as discussed in the lectures and provided by OpenCV, and 2) to combine it with other detection approaches to improve its efficacy. Your approach is to be tested and evaluated on a small image set that depicts aspects of an important traffic sign – No Entry.![image](https://user-images.githubusercontent.com/10274027/200964604-782ba709-cbc7-4490-8ebf-476b78dfd3eb.png)
