@@ -40,7 +40,7 @@ The boosting procedure considers all the positive images and employs sampled pat
 ### What to say in your report (roughly 1 page): 
 
 a)	TRAINING PERFORMANCE: The training tool produces a strong classifier in stages. Per stage the tool adds further features to the classifier and prints the achieved TPR and FPR (false positive rate) for that point on the training data (see Figure above). 
-1. Collate this information into a graph that plots TPR vs FPR on the training data for the three different stages. 
+1. Collate this information into a graph that plots TPR and FPR on the training data for the three different stages. 
 2. Produce this graph in your report and briefly interpret what it shows.
 
 b)	TESTING PERFORMANCE: 
