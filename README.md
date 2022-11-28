@@ -27,14 +27,14 @@ This subtask requires you to build an object detector that recognises no entry s
 ```
 opencv_createsamples -img no_entry.jpg -vec no_entry.vec  -w 20 -h 20 -num 500 -maxidev 80 -maxxangle 0.8 -maxyangle 0.8 -maxzangle 0.2
 ```
-For Windows, you might need to download OpenCV3.4.3 from [HERE](https://sourceforge.net/projects/opencvlibrary/files/opencv-win/3.4.3/). Extract it to `YOURPATH`, then use `YOURPATH\opencv\build\x64\vc15\opencv_createsamples.exe`.
+For Windows, you might need to download OpenCV3.4.3 from [HERE](https://sourceforge.net/projects/opencvlibrary/files/opencv-win/3.4.3/). Extract it to `YOURPATH`, then use `YOURPATH\opencv\build\x64\vc15\bin\opencv_createsamples.exe`.
 
 5. This will create 500 tiny 20×20 images of no entry signs (later used as positive training samples) and store in the file `no_entry.vec`, which contains all these 500 small sample images. Each of the sample images is created by randomly changing viewing angle and contrast (up to the maximum values specified) to reflect the possible variability of viewing parameters in real images better.
 6. Now use the created positive image set to train a no entry sign detector via AdaBoost. To do this, create a directory called `NoEntrycascade` in your working directory. Then run the `opencv_traincascade` tool with the following parameters as a single command in your working directory:
 ```
 opencv_traincascade -data NoEntrycascade -vec no_entry.vec -bg negatives.dat -numPos 500 -numNeg 500 -numStages 3 -maxDepth 1 -w 20 -h 20 -minHitRate 0.999  -maxFalseAlarmRate 0.05 -mode ALL
 ```
-For Windows, you might use `YOURPATH\opencv\build\x64\vc15\opencv_traincascade.exe`
+For Windows, you might use `YOURPATH\opencv\build\x64\vc15\bin\opencv_traincascade.exe`
 
 7. This will start the boosting procedure and construct a strong classifier stored in the file `cascade.xml`, which you can load in an OpenCV program for later detection as done in Lab4: Face Detection (`face.py`). You might need the change `model = cv2.CascadeClassifier()` to `model = cv2.CascadeClassifier(cascade_name)` or remove `cv2.samples.findFile`.
 8. During boosting the tool will provide updates about the machine learning in progress. Here is an example output when using 1000 instead of 500 samples…
