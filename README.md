@@ -34,7 +34,7 @@ For Windows, you might need to download OpenCV3.4.3 from [HERE](https://sourcefo
 ```
 opencv_traincascade -data NoEntrycascade -vec no_entry.vec -bg negatives.dat -numPos 500 -numNeg 500 -numStages 3 -maxDepth 1 -w 20 -h 20 -minHitRate 0.999  -maxFalseAlarmRate 0.05 -mode ALL
 ```
-For Windows, you might use `YOURPATH\opencv\build\x64\vc15\bin\opencv_traincascade.exe`
+For Windows, you can use `YOURPATH\opencv\build\x64\vc15\bin\opencv_traincascade.exe`
 
 7. This will start the boosting procedure and construct a strong classifier stored in the file `cascade.xml`, which you can load in an OpenCV program for later detection as done in Lab4: Face Detection (`face.py`). You might need the change `model = cv2.CascadeClassifier()` to `model = cv2.CascadeClassifier(cascade_name)` or remove `cv2.samples.findFile`.
 8. During boosting the tool will provide updates about the machine learning in progress. Here is an example output when using 1000 instead of 500 samples…
